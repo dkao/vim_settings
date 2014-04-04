@@ -37,8 +37,14 @@ if has("cscope")
     " if you want the reverse search order.
     set csto=0
 
+    " find GTAGS file from current directory up until /
+    let s:GTAGS_FILE = findfile("GTAGS", ".;/")
+    if filereadable(s:GTAGS_FILE)
+        set cscopeprg=gtags-cscope
+        exe "cs add " . s:GTAGS_FILE
+        unlet s:GTAGS_FILE
     " add any cscope database in current directory
-    if filereadable("cscope.out")
+    elseif filereadable("cscope.out")
         cs add cscope.out  
     " else add the database pointed to by environment variable 
     elseif $CSCOPE_DB != ""
@@ -130,7 +136,6 @@ if has("cscope")
     nmap <C-@><C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>	
     nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	
     nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
-
 
     """"""""""""" key map timeouts
     "
