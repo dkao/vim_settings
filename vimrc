@@ -79,9 +79,38 @@ endif
 " indentation
 set autoindent
 set smartindent
+"set t_Co=256
+" color scheme that works well with dark or light backgrounds
+"colorscheme delek
+"colorscheme relaxedgreen
+" peaksea
+" if ! has("gui_running")
+"     set t_Co=256
+" endif
+" " set background=light gives a different style, feel free to choose between them.
+" set background=dark
+" colors peaksea
+" K&R style
+"set cinoptions=:0,p0,t0
 " Documentation/CodingStyle
 set cinoptions=:0,l1,t0,g0,(0
 " comment style
 set formatoptions=tcqlron
+" configure split behavior
+"set splitright
 " highlight searches
 set hlsearch
+" vimdiff
+if &diff
+"if 1
+	if ! has("gui_running")
+		if $COLORTERM == 'gnome-terminal'
+			set t_Co=256
+		endif
+		set background=dark
+	endif
+	colorscheme peaksea
+	"set guifont=Liberation\ Mono\ 9
+endif
+
+"Dynamic Keyword Highlighting
