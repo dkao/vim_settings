@@ -6,21 +6,21 @@ if (!exists("g:hicount"))
 	let g:hicount=0
 	let g:hilite = {}
 	hi M0 guibg=Violet		ctermbg=Black
-	hi M1 guibg=Blue               ctermbg=DarkBlue
-	hi M2 guibg=Brown              ctermbg=DarkGreen
-	hi M3 guibg=Cyan               ctermbg=DarkCyan
-	hi M4 guibg=DarkBlue           ctermbg=DarkRed
-	hi M5 guibg=DarkCyan           ctermbg=DarkMagenta
-	hi M6 guibg=DarkGray           ctermbg=Brown
-	hi M7 guibg=DarkGreen          ctermbg=LightGray
-	hi M8 guibg=DarkMagenta        ctermbg=DarkGray
-	hi M9 guibg=DarkRed            ctermbg=Blue
-	hi M10 guibg=DarkYellow        ctermbg=Green
-	hi M11 guibg=Gray              ctermbg=Cyan
-	hi M12 guibg=Green             ctermbg=Red
-	hi M13 guibg=LightBlue         ctermbg=Magenta
-	hi M14 guibg=LightCyan         ctermbg=Yellow
-	hi M15 guibg=LightGray         ctermbg=White
+	hi M1 guibg=Blue		ctermbg=DarkBlue	ctermfg=White
+	hi M2 guibg=Brown		ctermbg=DarkGreen	ctermfg=White
+	hi M3 guibg=Cyan		ctermbg=DarkCyan	ctermfg=White
+	hi M4 guibg=DarkBlue		ctermbg=DarkRed		ctermfg=White
+	hi M5 guibg=DarkCyan		ctermbg=DarkMagenta	ctermfg=White
+	hi M6 guibg=DarkGray		ctermbg=Brown		ctermfg=White
+	hi M7 guibg=DarkGreen		ctermbg=Blue		ctermfg=White
+	hi M8 guibg=DarkMagenta		ctermbg=Green		ctermfg=White
+	hi M9 guibg=DarkRed		ctermbg=Cyan		ctermfg=White
+	hi M10 guibg=DarkYellow		ctermbg=Red		ctermfg=White
+	hi M11 guibg=Gray		ctermbg=Magenta		ctermfg=White
+	hi M12 guibg=Green		ctermbg=Yellow		ctermfg=White
+	hi M13 guibg=LightBlue		ctermbg=LightGray	ctermfg=DarkBlue
+	hi M14 guibg=LightCyan		ctermbg=LightGray	ctermfg=DarkGreen
+	hi M15 guibg=LightGray		ctermbg=White		ctermfg=DarkRed
 	hi M16 guibg=LightGreen
 	hi M17 guibg=LightMagenta
 	hi M18 guibg=LightRed
