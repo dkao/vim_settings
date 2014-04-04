@@ -23,6 +23,10 @@
 " properly set to work with the Vim-related packages.
 runtime! archlinux.vim
 
+" Set up pathogen
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+
 " If you prefer the old-style vim functionalty, add 'runtime! vimrc_example.vim'
 " Or better yet, read /usr/share/vim/vim73/vimrc_example.vim or the vim manual
 " and configure vim to your own liking!
