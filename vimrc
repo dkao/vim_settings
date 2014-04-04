@@ -112,5 +112,14 @@ if &diff
 	colorscheme peaksea
 	"set guifont=Liberation\ Mono\ 9
 endif
+" taglist toggle
+"nnoremap <silent> <F8> :TlistToggle<CR>
+"let Tlist_Inc_Winwidth = 0
+""let Tlist_Show_One_File = 1
+"let Tlist_File_Fold_Auto_Close = 1
+"let Tlist_WinWidth = 35
+
+" tagbar toggle
+nnoremap <silent> <F8> :TagbarToggle<CR>
 
 "Dynamic Keyword Highlighting
