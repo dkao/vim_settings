@@ -4,3 +4,6 @@
 [submodule "vim/bundle/bufexlorer"]
 	path = vim/bundle/bufexlorer
 	url = https://github.com/jlanzarotta/bufexplorer.git
+[submodule "vim/bundle/DirDiff"]
+	path = vim/bundle/DirDiff
+	url = https://github.com/vim-scripts/DirDiff.vim.git
