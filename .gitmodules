@@ -7,3 +7,6 @@
 [submodule "vim/bundle/DirDiff"]
 	path = vim/bundle/DirDiff
 	url = https://github.com/vim-scripts/DirDiff.vim.git
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
