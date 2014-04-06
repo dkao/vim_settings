@@ -112,6 +112,9 @@ if &diff
 	colorscheme peaksea
 	"set guifont=Liberation\ Mono\ 9
 endif
+" vimdiff from within vim
+au FilterWritePre * if &diff | colorscheme peaksea | endif
+au BufWinLeave * colorscheme default
 " taglist toggle
 "nnoremap <silent> <F8> :TlistToggle<CR>
 "let Tlist_Inc_Winwidth = 0
