@@ -126,3 +126,8 @@ au BufWinLeave * colorscheme default
 nnoremap <silent> <F8> :TagbarToggle<CR>
 
 "Dynamic Keyword Highlighting
+
+" vim-gitgutter
+nnoremap <silent> <F9> :GitGutterToggle<CR>
+let g:gitgutter_escape_grep = 1
+let g:gitgutter_enabled = 0
