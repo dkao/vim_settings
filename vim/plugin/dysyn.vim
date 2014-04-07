@@ -2,9 +2,7 @@ version 7.0
 "c-h		: highlight selected text or clear if non selected
 "c-j		: highlight pattern
 "---------------------------------------------------------------------
-if (!exists("g:hicount"))
-	let g:hicount=0
-	let g:hilite = {}
+function! SynInit()
 	hi M0 guibg=Violet		ctermbg=Black
 	hi M1 guibg=Blue		ctermbg=DarkBlue	ctermfg=White
 	hi M2 guibg=Brown		ctermbg=DarkGreen	ctermfg=White
@@ -31,6 +29,11 @@ if (!exists("g:hicount"))
 	hi M23 guibg=Red
 	hi M24 guibg=SeaGreen
 	hi M25 guibg=SlateBlue
+endfunction
+if (!exists("g:hicount"))
+	let g:hicount=0
+	let g:hilite = {}
+	execute SynInit()
 
 	let g:himaxcolors=16
 	if has('gui_win32')
@@ -210,3 +213,4 @@ map <silent> <c-h> :let dummy=SynUnlet(g:hicount):let @a=g:hicount:let dummy=S
 vmap <silent> <c-h> y:let g:hicount=(g:hicount+1)%g:himaxcolors:let g:hilite[g:hicount]="\\c\\V".substitute(substitute(escape(escape(@",'\'),'"'),"[\\x0a]","","g"),"[[:cntrl:]]",'\="\\m[\\x".printf("%02x",char2nr(submatch(0)))."]\\V"', "g"):let dummy=SynClear(g:hicount):let dummy=SynMatch(g:hicount,g:hilite[g:hicount]):let @/=g:hilite[g:hicount]:echo "Next Level:" g:hicount
 "au BufEnter * syn clear:for index in keys(g:hilite):let dummy=SynMatch(index, g:hilite[index]):endfor
 map <silent> <c-j> y::let g:hicount=(g:hicount+1)%g:himaxcolors:let g:hilite[g:hicount]="\\c".escape(@/,'"'):let dummy=SynClear(g:hicount):let dummy=SynMatch(g:hicount,g:hilite[g:hicount]):echo "Next Level:" g:hicount
+autocmd ColorScheme * call SynInit()
