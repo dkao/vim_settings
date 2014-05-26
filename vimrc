@@ -121,7 +121,8 @@ endif
 " vimdiff from within vim
 "au FilterWritePre * if &diff | colorscheme peaksea | endif
 au FilterWritePre * if &diff | colorscheme xoria256 | endif
-au ColorScheme * if g:colors_name=="xoria256" | hi SignColumn ctermbg=235 | else | hi Search cterm=reverse ctermbg=none | hi SignColumn ctermbg=254 | endif
+"au ColorScheme * if g:colors_name=="xoria256" | hi SignColumn ctermbg=235 | else | hi Search cterm=reverse ctermbg=none | hi SignColumn ctermbg=254 | endif
+au ColorScheme * if g:colors_name=="xoria256" | hi SignColumn ctermbg=235 | elseif g:colors_name=="zenburn" | hi SignColumn ctermbg=238 | else | hi Search cterm=reverse ctermbg=none | hi SignColumn ctermbg=254 | endif
 "au ColorScheme * hi Search cterm=reverse ctermbg=none | hi SignColumn ctermbg=254
 "au BufWinLeave * colorscheme default
 " taglist toggle
