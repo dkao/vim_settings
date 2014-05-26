@@ -83,6 +83,7 @@ set smartindent
 " color scheme that works well with dark or light backgrounds
 "colorscheme delek
 "colorscheme relaxedgreen
+"colorscheme xoria256
 " peaksea
 " if ! has("gui_running")
 "     set t_Co=256
@@ -100,6 +101,9 @@ set formatoptions=tcqlron
 "set splitright
 " highlight searches
 set hlsearch
+hi Search cterm=reverse ctermbg=none
+hi SignColumn ctermbg=254
+"hi SignColumn ctermbg=235
 " vimdiff
 if &diff
 "if 1
@@ -109,11 +113,15 @@ if &diff
 		endif
 		set background=dark
 	endif
-	colorscheme peaksea
+	"colorscheme peaksea
+	colorscheme xoria256
 	"set guifont=Liberation\ Mono\ 9
 endif
 " vimdiff from within vim
-au FilterWritePre * if &diff | colorscheme peaksea | endif
+"au FilterWritePre * if &diff | colorscheme peaksea | endif
+au FilterWritePre * if &diff | colorscheme xoria256 | endif
+au ColorScheme * if g:colors_name=="xoria256" | hi SignColumn ctermbg=235 | else | hi Search cterm=reverse ctermbg=none | hi SignColumn ctermbg=254 | endif
+"au ColorScheme * hi Search cterm=reverse ctermbg=none | hi SignColumn ctermbg=254
 "au BufWinLeave * colorscheme default
 " taglist toggle
 "nnoremap <silent> <F8> :TlistToggle<CR>
