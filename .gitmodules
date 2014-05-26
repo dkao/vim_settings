@@ -16,3 +16,6 @@
 [submodule "vim/bundle/vim-gitgutter"]
 	path = vim/bundle/vim-gitgutter
 	url = git://github.com/airblade/vim-gitgutter.git
+[submodule "vim/bundle/xoria256"]
+	path = vim/bundle/xoria256
+	url = https://github.com/vim-scripts/xoria256.vim.git
