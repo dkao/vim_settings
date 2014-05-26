@@ -133,6 +133,8 @@ au ColorScheme * if g:colors_name=="xoria256" | hi SignColumn ctermbg=235 | else
 
 " tagbar toggle
 nnoremap <silent> <F8> :TagbarToggle<CR>
+" sort tags by order of appearance
+let g:tagbar_sort = 0
 
 "Dynamic Keyword Highlighting
 
