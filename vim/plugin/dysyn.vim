@@ -4,18 +4,18 @@ version 7.0
 "---------------------------------------------------------------------
 function! SynInit()
 	hi M0 guibg=Violet		ctermbg=Black
-	hi M1 guibg=Blue		ctermbg=DarkBlue	ctermfg=LightGray
-	hi M2 guibg=Brown		ctermbg=DarkGreen	ctermfg=LightGray
-	hi M3 guibg=Cyan		ctermbg=DarkCyan	ctermfg=LightGray
-	hi M4 guibg=DarkBlue		ctermbg=DarkRed		ctermfg=LightGray
-	hi M5 guibg=DarkCyan		ctermbg=DarkMagenta	ctermfg=LightGray
-	hi M6 guibg=DarkGray		ctermbg=Brown		ctermfg=LightGray
-	hi M7 guibg=DarkGreen		ctermbg=Blue		ctermfg=LightGray
-	hi M8 guibg=DarkMagenta		ctermbg=Green		ctermfg=LightGray
-	hi M9 guibg=DarkRed		ctermbg=Cyan		ctermfg=LightGray
-	hi M10 guibg=DarkYellow		ctermbg=Red		ctermfg=LightGray
-	hi M11 guibg=Gray		ctermbg=Magenta		ctermfg=LightGray
-	hi M12 guibg=Green		ctermbg=Yellow		ctermfg=LightGray
+	hi M1 guibg=Blue		ctermbg=DarkBlue	ctermfg=White
+	hi M2 guibg=Brown		ctermbg=DarkGreen	ctermfg=White
+	hi M3 guibg=Cyan		ctermbg=DarkCyan	ctermfg=White
+	hi M4 guibg=DarkBlue		ctermbg=DarkRed		ctermfg=White
+	hi M5 guibg=DarkCyan		ctermbg=DarkMagenta	ctermfg=White
+	hi M6 guibg=DarkGray		ctermbg=Brown		ctermfg=White
+	hi M7 guibg=DarkGreen		ctermbg=Blue		ctermfg=White
+	hi M8 guibg=DarkMagenta		ctermbg=Green		ctermfg=DarkGray
+	hi M9 guibg=DarkRed		ctermbg=Cyan		ctermfg=DarkGray
+	hi M10 guibg=DarkYellow		ctermbg=Red		ctermfg=White
+	hi M11 guibg=Gray		ctermbg=Magenta		ctermfg=White
+	hi M12 guibg=Green		ctermbg=Yellow		ctermfg=DarkGray
 	hi M13 guibg=LightBlue		ctermbg=LightGray	ctermfg=DarkBlue
 	hi M14 guibg=LightCyan		ctermbg=LightGray	ctermfg=DarkGreen
 	hi M15 guibg=LightGray		ctermbg=White		ctermfg=DarkRed
