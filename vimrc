@@ -21,7 +21,7 @@
 
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages.
-runtime! archlinux.vim
+" runtime! archlinux.vim
 
 " Set up pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
