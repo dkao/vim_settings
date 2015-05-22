@@ -1,3 +1,4 @@
+"https://github.com/vim-scripts/Dynamic-Keyword-Highlighting
 version 7.0
 "c-h		: highlight selected text or clear if non selected
 "c-j		: highlight pattern
