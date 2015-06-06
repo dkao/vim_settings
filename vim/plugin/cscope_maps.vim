@@ -28,6 +28,17 @@
 " when it was compiled.  If it wasn't, time to recompile vim... 
 if has("cscope")
 
+    " find valid GTAGS file using GNU global
+    " lifted from gtags-cscope.vim
+    function! s:gtagsfindroot()
+            let cmd = "global -pq"
+            let cmd_output = system(cmd)
+            if v:shell_error == 0
+		    return strpart(cmd_output, 0, strlen(cmd_output) - 1)
+            endif
+	    return ''
+    endfunction
+
     """"""""""""" Standard cscope/vim boilerplate
 
     " use both cscope and ctag for 'ctrl-]', ':ta', and 'vim -t'
@@ -37,15 +48,14 @@ if has("cscope")
     " if you want the reverse search order.
     set csto=0
 
-    " find GTAGS file from current directory up until /
-    let s:GTAGS_FILE = findfile("GTAGS", ".;/")
-    if filereadable(s:GTAGS_FILE)
-        set cscopeprg=gtags-cscope
-        exe "cs add " . s:GTAGS_FILE
-        unlet s:GTAGS_FILE
+    let s:GTAGS_ROOT = s:gtagsfindroot()
     " add any cscope database in current directory
-    elseif filereadable("cscope.out")
+    if filereadable("cscope.out")
         cs add cscope.out  
+    " add valid GTAGS found by GNU global
+    elseif s:GTAGS_ROOT != ''
+        set cscopeprg=gtags-cscope
+        exe "cs add " . s:GTAGS_ROOT . "/GTAGS"
     " else add the database pointed to by environment variable 
     elseif $CSCOPE_DB != ""
         cs add $CSCOPE_DB
