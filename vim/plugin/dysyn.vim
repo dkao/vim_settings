@@ -209,8 +209,8 @@ function! SynUnlet(index)
 	       unlet g:hilite[a:index]
 	endif
 endfunction
-map <silent> <c-h> :let dummy=SynUnlet(g:hicount):let @a=g:hicount:let dummy=SynClear(g:hicount):let g:hicount=(g:hicount+(g:himaxcolors-1))%g:himaxcolors:if (g:hicount>0) | let @/=g:hilite[g:hicount]| endif:echo "Next Level:" g:hicount
-vmap <silent> <c-h> y:let g:hicount=(g:hicount+1)%g:himaxcolors:let g:hilite[g:hicount]="\\c\\V".substitute(substitute(escape(escape(@",'\'),'"'),"[\\x0a]","","g"),"[[:cntrl:]]",'\="\\m[\\x".printf("%02x",char2nr(submatch(0)))."]\\V"', "g"):let dummy=SynClear(g:hicount):let dummy=SynMatch(g:hicount,g:hilite[g:hicount]):let @/=g:hilite[g:hicount]:echo "Next Level:" g:hicount
+map <silent> <c-k> :let dummy=SynUnlet(g:hicount):let @a=g:hicount:let dummy=SynClear(g:hicount):let g:hicount=(g:hicount+(g:himaxcolors-1))%g:himaxcolors:if (g:hicount>0) | let @/=g:hilite[g:hicount]| endif:echo "Next Level:" g:hicount
+vmap <silent> <c-k> y:let g:hicount=(g:hicount+1)%g:himaxcolors:let g:hilite[g:hicount]="\\c\\V".substitute(substitute(escape(escape(@",'\'),'"'),"[\\x0a]","","g"),"[[:cntrl:]]",'\="\\m[\\x".printf("%02x",char2nr(submatch(0)))."]\\V"', "g"):let dummy=SynClear(g:hicount):let dummy=SynMatch(g:hicount,g:hilite[g:hicount]):let @/=g:hilite[g:hicount]:echo "Next Level:" g:hicount
 "au BufEnter * syn clear:for index in keys(g:hilite):let dummy=SynMatch(index, g:hilite[index]):endfor
 map <silent> <c-j> y::let g:hicount=(g:hicount+1)%g:himaxcolors:let g:hilite[g:hicount]="\\c".escape(@/,'"'):let dummy=SynClear(g:hicount):let dummy=SynMatch(g:hicount,g:hilite[g:hicount]):echo "Next Level:" g:hicount
 autocmd ColorScheme * call SynInit()
