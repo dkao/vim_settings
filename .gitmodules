@@ -22,3 +22,33 @@
 [submodule "vim/bundle/zenburn"]
 	path = vim/bundle/zenburn
 	url = https://github.com/vim-scripts/Zenburn.git
+[submodule "vim/bundle/cscope_maps.nvim"]
+	path = vim/bundle/cscope_maps.nvim
+	url = https://github.com/dhananjaylatkar/cscope_maps.nvim.git
+[submodule "vim/bundle/grayout.vim"]
+	path = vim/bundle/grayout.vim
+	url = https://github.com/mphe/grayout.vim.git
+[submodule "vim/bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "vim/bundle/vim-airline-themes"]
+	path = vim/bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "vim/bundle/vim-fugitive"]
+	path = vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/vim-git-log"]
+	path = vim/bundle/vim-git-log
+	url = https://github.com/kablamo/vim-git-log.git
+[submodule "vim/bundle/vim-monotone"]
+	path = vim/bundle/vim-monotone
+	url = https://github.com/Lokaltog/vim-monotone.git
+[submodule "vim/bundle/molokai"]
+	path = vim/bundle/molokai
+	url = https://github.com/tomasr/molokai.git
+[submodule "vim/bundle/plantuml-syntax"]
+	path = vim/bundle/plantuml-syntax
+	url = https://github.com/aklt/plantuml-syntax.git
+[submodule "vim/bundle/scratch.vim"]
+	path = vim/bundle/scratch.vim
+	url = https://github.com/mtth/scratch.vim

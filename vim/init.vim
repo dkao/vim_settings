@@ -82,6 +82,10 @@ endif
 set autoindent
 set smartindent
 "set t_Co=256
+" true color support
+" works but nothing is tuned for guicolors yet
+set termguicolors
+"set background=dark
 " color scheme that works well with dark or light backgrounds
 "colorscheme delek
 "colorscheme relaxedgreen
@@ -103,35 +107,48 @@ set formatoptions=tcqlron
 "set splitright
 " highlight searches
 set hlsearch
-hi Search cterm=reverse ctermbg=none
-hi SignColumn ctermbg=254
-"hi SignColumn ctermbg=235
-" vimdiff
+"hi Search cterm=reverse ctermbg=none
+"hi SignColumn ctermbg=254
+"hi CursorLineNr cterm=bold
+""hi SignColumn ctermbg=235
+
+"" vim-monotone
+" reduce contrast
+let g:monotone_contrast_factor = 0.9
+colorscheme monotone
+"" vimdiff
 if &diff
-"if 1
-	if ! has("gui_running")
-		if $COLORTERM == 'gnome-terminal'
-			set t_Co=256
-		endif
-		set background=dark
-	endif
-	"colorscheme peaksea
-	colorscheme xoria256
-	"set guifont=Liberation\ Mono\ 9
+  ""if 1
+  "if ! has("gui_running")
+  "  if $COLORTERM == 'gnome-terminal'
+  "    set t_Co=256
+  "  endif
+  "  set background=dark
+  "endif
+  "colorscheme peaksea
+  colorscheme xoria256
+  "set guifont=Liberation\ Mono\ 9
 endif
-" vimdiff from within vim
-"au FilterWritePre * if &diff | colorscheme peaksea | endif
+"" vimdiff from within vim
+""au FilterWritePre * if &diff | colorscheme peaksea | endif
 au FilterWritePre * if &diff | colorscheme xoria256 | endif
-"au ColorScheme * if g:colors_name=="xoria256" | hi SignColumn ctermbg=235 | else | hi Search cterm=reverse ctermbg=none | hi SignColumn ctermbg=254 | endif
-au ColorScheme * if g:colors_name=="xoria256" | hi SignColumn ctermbg=235 | elseif g:colors_name=="zenburn" | hi SignColumn ctermbg=238 | else | hi Search cterm=reverse ctermbg=none | hi SignColumn ctermbg=254 | endif
-"au ColorScheme * hi Search cterm=reverse ctermbg=none | hi SignColumn ctermbg=254
-"au BufWinLeave * colorscheme default
-" taglist toggle
-"nnoremap <silent> <F8> :TlistToggle<CR>
-"let Tlist_Inc_Winwidth = 0
-""let Tlist_Show_One_File = 1
-"let Tlist_File_Fold_Auto_Close = 1
-"let Tlist_WinWidth = 35
+""au ColorScheme * if g:colors_name=="xoria256" | hi SignColumn ctermbg=235 | else | hi Search cterm=reverse ctermbg=none | hi SignColumn ctermbg=254 | endif
+"au ColorScheme * if g:colors_name=="xoria256" | hi SignColumn ctermbg=235 | elseif g:colors_name=="zenburn" | hi SignColumn ctermbg=238 | elseif g:colors_name=="Tomorrow-Night" | hi SignColumn ctermbg=236 | else | hi Search cterm=reverse ctermbg=none | hi SignColumn ctermbg=254 | hi CursorLineNr cterm=bold | endif
+""au ColorScheme * hi Search cterm=reverse ctermbg=none | hi SignColumn ctermbg=254
+""au BufWinLeave * colorscheme default
+au FileType gitcommit colorscheme xoria256
+"" taglist toggle
+""nnoremap <silent> <F8> :TlistToggle<CR>
+""let Tlist_Inc_Winwidth = 0
+"""let Tlist_Show_One_File = 1
+""let Tlist_File_Fold_Auto_Close = 1
+""let Tlist_WinWidth = 35
+
+"set number
+"set relativenumber
+"au InsertEnter * :set norelativenumber
+"au InsertLeave * :set relativenumber
+let g:NumberToggleTrigger = "<F7>"
 
 " tagbar toggle
 nnoremap <silent> <F8> :TagbarToggle<CR>
@@ -144,3 +161,39 @@ let g:tagbar_sort = 0
 nnoremap <silent> <F9> :GitGutterToggle<CR>
 let g:gitgutter_escape_grep = 1
 let g:gitgutter_enabled = 0
+
+"" vim-airline
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'minimalist'
+"if $USE_POWERLINE_FONTS == '1'
+"  let g:airline_powerline_fonts = 1
+"else
+"  let g:airline_theme = 'sol'
+"endif
+"let g:airline#extensions#tabline#enabled = 1
+set laststatus=2
+set noshowmode
+let g:airline#extensions#whitespace#mixed_indent_algo = 2
+
+" Colors from grayscale-theme.el
+"let g:terminal_color_0  = '#000000'
+let g:terminal_color_0  = '#2e2e2e'
+let g:terminal_color_1  = '#bc8383'
+let g:terminal_color_2  = '#7f9f7f'
+let g:terminal_color_3  = '#d0bf8f'
+let g:terminal_color_4  = '#6ca0a3'
+let g:terminal_color_5  = '#dc8cc3'
+let g:terminal_color_6  = '#8cd0d3'
+let g:terminal_color_7  = '#868686'
+let g:terminal_color_8  = '#474747'
+let g:terminal_color_9  = '#dca3a3'
+let g:terminal_color_10 = '#8fb28f'
+let g:terminal_color_11 = '#f0dfaf'
+let g:terminal_color_12 = '#94bff3'
+let g:terminal_color_13 = '#ec93d3'
+let g:terminal_color_14 = '#93e0e3'
+let g:terminal_color_15 = '#e6e6e6'
+
+lua << EOF
+  require("cscope_maps").setup({})
+EOF
