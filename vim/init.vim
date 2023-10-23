@@ -195,5 +195,19 @@ let g:terminal_color_14 = '#93e0e3'
 let g:terminal_color_15 = '#e6e6e6'
 
 lua << EOF
-  require("cscope_maps").setup({})
+  require('telescope').setup{
+  }
+  require('cscope_maps').setup{
+    skip_input_prompt = true,
+    cscope = {
+      picker = "telescope",
+    }
+  }
 EOF
+
+" telescope maps
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>

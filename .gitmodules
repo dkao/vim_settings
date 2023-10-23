@@ -52,3 +52,10 @@
 [submodule "vim/bundle/scratch.vim"]
 	path = vim/bundle/scratch.vim
 	url = https://github.com/mtth/scratch.vim
+[submodule "vim/bundle/telescope.nvim"]
+	path = vim/bundle/telescope.nvim
+	url = https://github.com/nvim-telescope/telescope.nvim.git
+	branch = 0.1.x
+[submodule "vim/bundle/plenary.nvim"]
+	path = vim/bundle/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim.git
