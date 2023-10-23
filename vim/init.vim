@@ -196,6 +196,15 @@ let g:terminal_color_15 = '#e6e6e6'
 
 lua << EOF
   require('telescope').setup{
+    pickers = {
+      buffers = {
+        mappings = {
+          i = {
+            ["<c-d>"] = "delete_buffer",
+          }
+        }
+      }
+    }
   }
   require('cscope_maps').setup{
     skip_input_prompt = true,
